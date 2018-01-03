@@ -1,0 +1,8 @@
+version: '2'
+services:
+  abs-excel-converter:
+    image: sysunite/abs-excel-converter:0.0.5
+    expose:
+      - "6567"
+    ports:
+      - "6567:6567"

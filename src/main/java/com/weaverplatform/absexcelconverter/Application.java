@@ -14,7 +14,7 @@ import com.weaverplatform.absexcelconverter.controllers.ApplicationController;
 import com.weaverplatform.absexcelconverter.controllers.FileController;
 import com.weaverplatform.absexcelconverter.util.CORS;
 import com.weaverplatform.absexcelconverter.util.Props;
-import com.weaverplatform.absexcelconverter.util.WeaverError;
+import com.weaverplatform.protocol.WeaverError;
 
 /**
  * The main Application class in which all processes are bootstrapped and
@@ -60,7 +60,6 @@ public class Application {
     exception(WeaverError.class, (e, request, response) -> {
       response.status(400);
       response.body(e.toJson());
-      System.out.println(e.toJson());
     });
 
     // Catch all other exceptions

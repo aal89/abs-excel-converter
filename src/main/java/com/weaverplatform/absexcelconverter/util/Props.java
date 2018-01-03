@@ -46,7 +46,7 @@ public class Props extends Properties {
     }
   }
 
-  public static Integer getInt(String envKey, String propKey) {
-	  return Integer.valueOf(get(envKey, propKey));
+	public static Integer getInt(String envKey, String propKey) {
+    return Integer.valueOf(get(envKey, propKey));
   }
 }

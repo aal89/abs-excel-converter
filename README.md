@@ -3,7 +3,7 @@ This microservice is meant to convert excel sheets in a particular format (see t
 
 This is a Maven Java project which exposes a REST API (on a configurable port) to communicate with it. The general concept is to upload an excel file and you get a WriteOperation (batch) returned.
 
-***Version: 0.0.1-SNAPSHOT***
+***Version: 0.0.5***
 
 ### Configuration
 See the **main.properties** file in the **resources** folder and adjust accordingly.
@@ -42,12 +42,19 @@ An array containing one or more Weaver WriteOperations in JSON format.
 ***Example***
 ```
 [{
-    "name": "${project.artifactId}",
-    "version": "${project.version}",
-    "source": "https://github.com/weaverplatform/abs-excel-converter"
+	<WriteOperation JSON's>
 }, ... ]
 ```
 
-*Http [500]*
+*Http [400]*
 
-When a server error occured.
+When a bad request occured, an invalid ABS Excel sheet was provided. (see the issue
+a valid and an invalid example of ABS Excel sheet structures, not the header column).
+
+***Example***
+```
+{
+	"code": 333,
+	"message": "Invalid ABS Excel structure."
+}
+```
